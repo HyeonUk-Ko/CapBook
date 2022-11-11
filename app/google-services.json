@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "631761347171",
+    "firebase_url": "https://capstondb-default-rtdb.firebaseio.com",
+    "project_id": "capstondb",
+    "storage_bucket": "capstondb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631761347171:android:759398f0a742b4c4bc8e56",
+        "android_client_info": {
+          "package_name": "com.example.ourgroupbooksystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631761347171-4lc0679gv1v7ks264koglpnt9ii9ic65.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ourgroupbooksystem",
+            "certificate_hash": "7ad2b69594802bcb5d085c61995b2b0fe1ddbdc7"
+          }
+        },
+        {
+          "client_id": "631761347171-bdr2380c5kkqh1b3qs71as6audib4ko4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCTn9FP4kUGbOzxLeTnl6hCCWfbgHcXnY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631761347171-bdr2380c5kkqh1b3qs71as6audib4ko4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
