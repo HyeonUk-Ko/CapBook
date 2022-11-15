@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/OurGroupBook/app/src/main/res/layout/activity_main.xml" value="0.23177083333333334" />
+        <entry key="..\:/OurGroupBook/app/src/main/res/layout/fragment_favoritefragment.xml" value="0.1328125" />
+        <entry key="..\:/OurGroupBook/app/src/main/res/layout/fragment_homefragment.xml" value="0.1328125" />
+        <entry key="..\:/OurGroupBook/app/src/main/res/layout/fragment_personfragment.xml" value="0.1328125" />
+        <entry key="..\:/OurGroupBook/app/src/main/res/layout/login_main.xml" value="0.1046875" />
+        <entry key="..\:/OurGroupBook/app/src/main/res/layout/register_main.xml" value="0.264" />
         <entry key="..\:/Users/kohw9/AndroidStudioProjects/OurgroupBookSystem/app/src/main/res/layout/fragment_main.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/drawable/custom_edittxt.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/edittxt_cursor.xml" value="0.1705" />
