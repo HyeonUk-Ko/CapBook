@@ -16,30 +16,41 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.regex.Pattern;
+
 public class login_main extends Activity {
 
     private TextView registerTv, loginTv;
     private EditText emailText, pwdText;
     private FirebaseAuth mAuth;
+    Pattern emailPattern = android.util.Patterns.EMAIL_ADDRESS;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_main);
 
         registerTv = findViewById(R.id.registerTv);
-        loginTv = findViewById(R.id.loginTv);
+                loginTv = findViewById(R.id.loginTv);
 
-        mAuth = FirebaseAuth.getInstance();
+                mAuth = FirebaseAuth.getInstance();
 
-        loginTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                emailText = findViewById(R.id.email);
-                pwdText = findViewById(R.id.pwd);
+                loginTv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        emailText = findViewById(R.id.email);
+                        pwdText = findViewById(R.id.pwd);
                 String emailTextString = emailText.getText().toString();
                 String pwdTextString = pwdText.getText().toString();
 
-                System.err.println("emailTextString ===>" + emailTextString);
-                System.err.println("pwdTextString ===>" + pwdTextString);
+                if(pwdTextString.length()<6) {
+                    Toast.makeText(login_main.this, "비밀번호는 6자 이상이어야 합니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if( !(emailPattern.matcher(emailTextString).matches()) ) {
+                    Toast.makeText(login_main.this, "유효한 email을 입력해주세요", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 loginUser(emailTextString,pwdTextString);
             }
