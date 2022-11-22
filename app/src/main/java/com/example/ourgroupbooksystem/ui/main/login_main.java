@@ -28,6 +28,8 @@ public class login_main extends Activity {
         registerTv = findViewById(R.id.registerTv);
         loginTv = findViewById(R.id.loginTv);
 
+        mAuth = FirebaseAuth.getInstance();
+
         loginTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

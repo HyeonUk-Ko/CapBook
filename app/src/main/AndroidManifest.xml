@@ -35,8 +35,8 @@
         <activity android:name=".ui.main.homefragment"
             android:exported="true"
             tools:ignore="Instantiatable">
-        </activity>
-        <activity android:name=".ui.main.register_main"
+        </activity>_
+        <activity android:name=".ui.main.registermain"
             android:exported="true"
             tools:ignore="Instantiatable">
         </activity>
