@@ -6,6 +6,8 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.ourgroupbooksystem.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -13,6 +15,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivitys extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    private FragmentManager fm;
+    private FragmentTransaction ft;
+    private homefragment frag1;
+    private favoritefragment frag2;
+    private personfragment frag3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,29 +28,48 @@ public class MainActivitys extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        bottomNavigationView =findViewById(R.id.bottom_navigation);
-        getSupportFragmentManager().beginTransaction().add(R.id.frameLayout, new homefragment()).commit();
-
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
                     case R.id.nav_home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new homefragment()).commit();
+                        setFrag(0);
                         break;
                     case R.id.nav_favorite:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new favoritefragment()).commit();
+                        setFrag(1);
                         break;
                     case R.id.nav_my:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new personfragment()).commit();
+                        setFrag(2);
                         break;
-
                 }
                 return true;
             }
         });
+        frag1 = new homefragment();
+        frag2 = new favoritefragment();
+        frag3 = new personfragment();
+        setFrag(0);
 
+    }
+
+    private void setFrag(int n){
+        fm = getSupportFragmentManager();
+        ft = fm.beginTransaction();
+        switch (n){
+            case 0:
+                ft.replace(R.id.frameLayout,frag1);
+                ft.commit();
+                break;
+            case 1:
+                ft.replace(R.id.frameLayout,frag2);
+                ft.commit();
+                break;
+            case 2:
+                ft.replace(R.id.frameLayout,frag3);
+                ft.commit();
+                break;
+        }
     }
 
 }
