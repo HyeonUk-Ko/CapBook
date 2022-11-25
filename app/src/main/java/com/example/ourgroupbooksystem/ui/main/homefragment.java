@@ -51,6 +51,8 @@ public class homefragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String clickName = listViewData.get(position).title;
+                Log.d("확인", "name : " + clickName);
 
             }
         });

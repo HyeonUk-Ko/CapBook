@@ -1,5 +1,7 @@
 package com.example.ourgroupbooksystem.ui.main;
 
+import android.widget.Switch;
+
 public class ListData {
     public int mainImage = 0;
     public int opt_1 = 0;
