@@ -98,7 +98,7 @@ public class homefragment extends Fragment {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    dilaog01.show();
+                        dilaog01.show();
                         Window window = dilaog01.getWindow();
                         window.setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
@@ -128,7 +128,6 @@ public class homefragment extends Fragment {
 
             listData.mainImage = R.drawable.ic_launcher_foreground;
             listData.star = R.drawable.ic_launcher_foreground;
-
             listData.title = tmp.getBookName();
             listData.body_1 =  tmp.getPublisher() + " / " + tmp.getAuthor();
             listData.body_2 = tmp.getPublishedDate() + " / " + tmp.getIsbn();

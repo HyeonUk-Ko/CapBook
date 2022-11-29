@@ -11,4 +11,5 @@
     <color name="colorEditTextBg">#e6e6e6</color>
     <color name="colorProductNameBg">#efefef</color>
     <color name="colorAccent">#3c49de</color>
+    <color name="pink_500">#ff1493</color>
 </resources>
