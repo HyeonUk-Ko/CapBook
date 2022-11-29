@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -81,11 +82,22 @@ public class homefragment extends Fragment {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                         dilaog01.show();
                         Window window = dilaog01.getWindow();
                         window.setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
                         Button close_btn=dilaog01.findViewById(R.id.btn_close);
+                        TextView name = dilaog01.findViewById(R.id.book_name);
+                        TextView inform = dilaog01.findViewById(R.id.inform);
+                        TextView dateInform = dilaog01.findViewById(R.id.date_inform);
+                        TextView publisher = dilaog01.findViewById(R.id.made_inform);
+                        TextView price = dilaog01.findViewById(R.id.price_inform);
+                        TextView res = dilaog01.findViewById(R.id.res_inform);
+                        TextView ser = dilaog01.findViewById(R.id.ser_num);
+
+
+
                         close_btn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
@@ -131,6 +143,7 @@ public class homefragment extends Fragment {
         }
         return listViewData;
     }
+
     List<BookDataVO> searchedResult = new LinkedList<>();
     public void searchData (String searchText) {
 
