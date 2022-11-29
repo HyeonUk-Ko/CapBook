@@ -64,7 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:id="@+id/autologin"
+                    android:id="@+id/autoLogin"
                     android:text="자동로그인"/>
 
                 <Button

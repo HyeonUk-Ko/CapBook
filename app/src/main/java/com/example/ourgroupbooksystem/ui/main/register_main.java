@@ -100,7 +100,7 @@ public class register_main extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(register_main.this, "등록 완료", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(register_main.this, MainActivitys.class);
+                            Intent intent = new Intent(register_main.this, login_main.class);
                             startActivity(intent);
                             finish();
                         } else {
