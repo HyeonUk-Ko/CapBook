@@ -14,14 +14,14 @@
         android:gravity="center">
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/searchBox"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="제목을 입력하세요" />
 
         <Button
-            android:id="@+id/btnOK"
+            android:id="@+id/searchBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

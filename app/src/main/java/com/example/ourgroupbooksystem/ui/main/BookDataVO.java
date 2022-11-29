@@ -6,6 +6,24 @@ public class BookDataVO {
     public String bookName;
     public String publishedDate;
     public String publisher;
+    public int quantitiy;
+    public int price;
+
+    public int getQuantitiy() {
+        return quantitiy;
+    }
+
+    public void setQuantitiy(int quantitiy) {
+        this.quantitiy = quantitiy;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     public String getIsbn() {
         return isbn;
