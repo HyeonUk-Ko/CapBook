@@ -18,8 +18,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_margin="70dp"
-            tools:ignore="MissingConstraints">
+            android:layout_margin="70dp">
 
             <EditText
                 android:id="@+id/title"
@@ -101,7 +100,7 @@
             android:layout_height="wrap_content"
             android:text="등록">
 
-            록    </Button>
+             </Button>
 
 
 
