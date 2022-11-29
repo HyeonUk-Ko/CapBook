@@ -25,6 +25,7 @@
             android:layout_margin="10dp"
             android:text="비밀번호 변경"/>
         <Button
+            android:id="@+id/logout"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -36,58 +37,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
-            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:text="이름"
+            android:text="로그인한 이메일"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textview5"
+            android:id="@+id/emailInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:text="TextView"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/userid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="아이디"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textview6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="TextView"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/useremail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="이메일"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textview7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="TextView"
             android:textSize="18sp" />
 
     </LinearLayout>
