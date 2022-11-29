@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/CapBook/app/src/main/res/layout/item_listview.xml" value="0.409375" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/item_listview2.xml" value="0.409375" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/login_main.xml" value="0.409375" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/register_main.xml" value="0.409375" />
         <entry key="..\:/OurGroupBook/app/src/main/res/layout/activity_main.xml" value="0.23177083333333334" />
         <entry key="..\:/OurGroupBook/app/src/main/res/layout/fragment_favoritefragment.xml" value="0.1328125" />
         <entry key="..\:/OurGroupBook/app/src/main/res/layout/fragment_homefragment.xml" value="0.1328125" />

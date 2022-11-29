@@ -1,6 +1,7 @@
 package com.example.ourgroupbooksystem.ui.main;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -30,6 +31,8 @@ public class register_main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_main);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -47,7 +50,6 @@ public class register_main extends AppCompatActivity {
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 signUp();
             }
         });
