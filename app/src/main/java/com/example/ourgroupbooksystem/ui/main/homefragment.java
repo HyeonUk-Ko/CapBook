@@ -87,7 +87,7 @@ public class homefragment extends Fragment {
                         Window window = dilaog01.getWindow();
                         window.setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
-                        Button close_btn=dilaog01.findViewById(R.id.btn_close);
+                        Button close_btn = dilaog01.findViewById(R.id.btn_close);
                         TextView name = dilaog01.findViewById(R.id.book_name);
                         TextView inform = dilaog01.findViewById(R.id.inform);
                         TextView dateInform = dilaog01.findViewById(R.id.date_inform);
