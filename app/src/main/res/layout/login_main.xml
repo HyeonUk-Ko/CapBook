@@ -92,7 +92,16 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/managerLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="관리자 로그인"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

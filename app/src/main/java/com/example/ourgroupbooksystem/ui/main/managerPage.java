@@ -10,7 +10,7 @@ import com.example.ourgroupbooksystem.R;
 
 public class managerPage extends AppCompatActivity {
 
-    private Button add;
+    private Button addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,23 @@ public class managerPage extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        
+        addButton = findViewById(R.id.add_Button);
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(managerPage.this,managerPage.class);
+                startActivity(intent);
+            }
+        });
+
+        addButton = findViewById(R.id.add_Button);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 
