@@ -23,11 +23,11 @@ public class fragment_manager_person extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_personfragment, container, false);
+        View v = inflater.inflate(R.layout.fragment_manager_person, container, false);
 
-        TextView emailInfo = v.findViewById(R.id.emailInfo);
-        Button logoutBtn = v.findViewById(R.id.logout);
-        Button pwdChangeBtn = v.findViewById(R.id.pwdChange);
+        TextView emailInfo = v.findViewById(R.id.emailInfo2);
+        Button logoutBtn = v.findViewById(R.id.logout2);
+        Button pwdChangeBtn = v.findViewById(R.id.pwdChange2);
 
 
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences("data", 0);

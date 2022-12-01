@@ -178,7 +178,7 @@ public class login_main extends Activity {
         if(code.equals(managerLoginCode)){
             managerLoginDialog.dismiss();
             Toast.makeText(login_main.this, "관리자 로그인 성공", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(login_main.this, ManagerActivity.class);
+            Intent intent = new Intent(login_main.this, managerPage.class);
             startActivity(intent);
         } else {
             managerLoginDialog.dismiss();

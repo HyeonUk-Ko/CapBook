@@ -54,15 +54,15 @@ public class fragment_manger_book_list extends Fragment {
         dilaog01.requestWindowFeature(Window.FEATURE_NO_TITLE); // 타이틀 제거
         dilaog01.setContentView(R.layout.dialog_book);             // xml 레이아웃 파일과 연결
 
-        return inflater.inflate(R.layout.fragment_homefragment, container, false);
+        return inflater.inflate(R.layout.fragment_manger_book_list, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        listView = view.findViewById(R.id.list);
-        Button searchBtn = (Button) view.findViewById(R.id.searchBtn);
-        EditText searchBox = (EditText) view.findViewById(R.id.searchBox);
+        listView = view.findViewById(R.id.list2);
+        Button searchBtn = (Button) view.findViewById(R.id.searchBtn2);
+        EditText searchBox = (EditText) view.findViewById(R.id.searchBox2);
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         mDatabase.child("bookList").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {

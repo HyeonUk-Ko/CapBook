@@ -20,8 +20,17 @@
             android:name=".ManagerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.manager_activity_main"
-            android:exported="false" />
+            android:name=".fragment_manager_person"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".fragment_manger_book_list"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".ui.main.managerPage"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ui.main.personfragment"
             android:exported="true"

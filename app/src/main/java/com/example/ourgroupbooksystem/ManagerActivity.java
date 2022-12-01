@@ -21,8 +21,8 @@ public class ManagerActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private FragmentManager fm;
     private FragmentTransaction ft;
-    private homefragment frag1;
-    private personfragment frag2;
+    private fragment_manger_book_list frag1;
+    private fragment_manager_person frag2;
 
 
     @Override
@@ -31,23 +31,23 @@ public class ManagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_manager);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottom_navigation2);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.nav_home:
+                    case R.id.nav_home2:
                         setFrag(0);
                         break;
-                    case R.id.nav_my:
+                    case R.id.nav_my2:
                         setFrag(1);
                         break;
                 }
                 return true;
             }
         });
-        frag1 = new homefragment();
-        frag2 = new personfragment();
+        frag1 = new fragment_manger_book_list();
+        frag2 = new fragment_manager_person();
         setFrag(0);
 
     }
