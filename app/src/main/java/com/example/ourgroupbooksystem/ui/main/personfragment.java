@@ -61,7 +61,7 @@ public class personfragment extends Fragment {
 
                 mAuth.sendPasswordResetEmail(email);
                 Toast.makeText(getActivity(), "비밀번호 변경 확인 이메일을 보냈습니다.", Toast.LENGTH_SHORT).show();
-                
+
                 editor.clear();
                 editor.commit();
             }

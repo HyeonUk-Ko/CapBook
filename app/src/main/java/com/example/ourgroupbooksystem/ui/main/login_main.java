@@ -28,6 +28,8 @@ public class login_main extends Activity {
     private CheckBox autoLoginCheckBox;
     Pattern emailPattern = android.util.Patterns.EMAIL_ADDRESS;
 
+    private long backKeyPressedTime = 0;
+
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
@@ -126,6 +128,23 @@ public class login_main extends Activity {
             }
 
             loginUser(email,password);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+
+        if (System.currentTimeMillis() > backKeyPressedTime + 2000) {
+            backKeyPressedTime = System.currentTimeMillis();
+            Toast.makeText(this, "\'뒤로\' 버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (System.currentTimeMillis() <= backKeyPressedTime + 2000) {
+            moveTaskToBack(true);
+            finishAndRemoveTask();
+            android.os.Process.killProcess(android.os.Process.myPid());
         }
     }
 }
