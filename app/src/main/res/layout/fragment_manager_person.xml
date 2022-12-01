@@ -53,7 +53,7 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/pwdChange2"
+            android:id="@+id/codeChangeBtn"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:text="관리자 코드 변경"

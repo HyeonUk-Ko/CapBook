@@ -67,15 +67,5 @@
         </LinearLayout>
 
     </LinearLayout>
-    <ToggleButton
-        android:id="@+id/button_favorite"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/button_favorite"
-        android:checked="false"
-        android:text=""
-        android:textOff=""
-        android:textOn=""/>
-
 
 </LinearLayout>

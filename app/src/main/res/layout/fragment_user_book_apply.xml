@@ -16,12 +16,12 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_margin="30dp">
+            android:layout_margin="25dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="도서 등록하기"
+                android:text="도서 신청하기"
                 android:textSize="26dp"
                 android:textStyle="bold"
                 android:layout_marginBottom="30dp"/>
@@ -29,13 +29,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="등록하시는 책의 대한 정보를 모두 적어주세요"
+                android:text="신청하시는 책의 대한 정보를 빈칸 없이 적어주세요"
                 android:textSize="14dp"
                 android:textStyle="bold"
                 android:layout_marginBottom="30dp"/>
 
             <EditText
-                android:id="@+id/bookNameForBookAdd"
+                android:id="@+id/bookNameForBookApply"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -45,7 +45,7 @@
                 android:textCursorDrawable="@drawable/edittxt_cursor" />
 
             <EditText
-                android:id="@+id/authorForBookAdd"
+                android:id="@+id/authorForBookApply"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -55,7 +55,7 @@
                 android:textCursorDrawable="@drawable/edittxt_cursor" />
 
             <EditText
-                android:id="@+id/publishedDateForBookAdd"
+                android:id="@+id/publishedDateForBookApply"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_edittxt"
@@ -66,7 +66,7 @@
                 android:textCursorDrawable="@drawable/edittxt_cursor" />
 
             <EditText
-                android:id="@+id/publisherForBookAdd"
+                android:id="@+id/publisherForBookApply"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -78,7 +78,7 @@
                 android:textCursorDrawable="@drawable/edittxt_cursor" />
 
             <EditText
-                android:id="@+id/priceForBookAdd"
+                android:id="@+id/priceForBookApply"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_edittxt"
@@ -89,18 +89,7 @@
                 android:textCursorDrawable="@drawable/edittxt_cursor" />
 
             <EditText
-                android:id="@+id/quantityForBookAdd"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_edittxt"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:hint="책 재고"
-                android:imeOptions="actionDone"
-                android:textCursorDrawable="@drawable/edittxt_cursor" />
-
-            <EditText
-                android:id="@+id/isbnForBookAdd"
+                android:id="@+id/isbnForBookApply"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_edittxt"
@@ -114,11 +103,11 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/addBookBtn"
+            android:id="@+id/submitApplyBtn"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@drawable/round_button"
-            android:text="등록하기"
+            android:text="신청하기"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="bold">

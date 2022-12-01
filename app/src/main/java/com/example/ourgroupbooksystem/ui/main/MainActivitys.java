@@ -19,7 +19,7 @@ public class MainActivitys extends AppCompatActivity {
     private FragmentManager fm;
     private FragmentTransaction ft;
     private homefragment frag1;
-    private favoritefragment frag2;
+    private fragment_user_book_apply frag2;
     private personfragment frag3;
 
     private long backKeyPressedTime = 0;
@@ -50,7 +50,7 @@ public class MainActivitys extends AppCompatActivity {
             }
         });
         frag1 = new homefragment();
-        frag2 = new favoritefragment();
+        frag2 = new fragment_user_book_apply();
         frag3 = new personfragment();
         setFrag(0);
 

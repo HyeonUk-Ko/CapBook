@@ -6,22 +6,32 @@ public class BookDataVO {
     public String bookName;
     public String publishedDate;
     public String publisher;
-    public int quantitiy;
-    public int price;
+    public Integer quantitiy;
+    public Integer price;
 
-    public int getQuantitiy() {
+    public Integer getQuantitiy() {
         return quantitiy;
     }
 
-    public void setQuantitiy(int quantitiy) {
+    public void setQuantitiy(Integer quantitiy) {
         this.quantitiy = quantitiy;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public BookDataVO(String isbn, String author, String bookName, String publishedDate, String publisher, Integer quantitiy, Integer price) {
+        this.isbn = isbn;
+        this.author = author;
+        this.bookName = bookName;
+        this.publishedDate = publishedDate;
+        this.publisher = publisher;
+        this.quantitiy = quantitiy;
         this.price = price;
     }
 
@@ -66,13 +76,5 @@ public class BookDataVO {
     }
 
     public BookDataVO() {
-    }
-
-    public BookDataVO(String isbn, String author, String bookName, String publishedDate, String publisher) {
-        this.isbn = isbn;
-        this.author = author;
-        this.bookName = bookName;
-        this.publishedDate = publishedDate;
-        this.publisher = publisher;
     }
 }

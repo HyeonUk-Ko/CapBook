@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import com.example.ourgroupbooksystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,14 +42,14 @@ public class homefragment extends Fragment {
     private List<BookDataVO> result = new LinkedList<BookDataVO>();
     ArrayList<ListData> listViewData = new ArrayList<>();
     ListView listView;
-    Dialog dilaog01;
+    Dialog bookDialogPopup;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        dilaog01 = new Dialog(getContext());       // Dialog 초기화
-        dilaog01.requestWindowFeature(Window.FEATURE_NO_TITLE); // 타이틀 제거
-        dilaog01.setContentView(R.layout.dialog_book);             // xml 레이아웃 파일과 연결
+        bookDialogPopup = new Dialog(getContext());       // Dialog 초기화
+        bookDialogPopup.requestWindowFeature(Window.FEATURE_NO_TITLE); // 타이틀 제거
+        bookDialogPopup.setContentView(R.layout.dialog_book);             // xml 레이아웃 파일과 연결
 
         return inflater.inflate(R.layout.fragment_homefragment, container, false);
     }
@@ -82,25 +83,67 @@ public class homefragment extends Fragment {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        dilaog01.show();
-                        Window window = dilaog01.getWindow();
-                        window.setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
-                        Button close_btn = dilaog01.findViewById(R.id.btn_close);
-                        TextView name = dilaog01.findViewById(R.id.book_name);
-                        TextView inform = dilaog01.findViewById(R.id.inform);
-                        TextView dateInform = dilaog01.findViewById(R.id.date_inform);
-                        TextView publisher = dilaog01.findViewById(R.id.made_inform);
-                        TextView price = dilaog01.findViewById(R.id.price_inform);
-                        TextView res = dilaog01.findViewById(R.id.res_inform);
-                        TextView ser = dilaog01.findViewById(R.id.ser_num);
+                        Button close_btn = bookDialogPopup.findViewById(R.id.btn_close);
+                        TextView bookName = bookDialogPopup.findViewById(R.id.book_name);
+                        TextView quantity = bookDialogPopup.findViewById(R.id.inform);
+                        TextView publishedDate = bookDialogPopup.findViewById(R.id.date_inform);
+                        TextView publisher = bookDialogPopup.findViewById(R.id.made_inform);
+                        TextView price = bookDialogPopup.findViewById(R.id.price_inform);
+                        TextView author = bookDialogPopup.findViewById(R.id.author);
+                        TextView isbn = bookDialogPopup.findViewById(R.id.ser_num);
+                        String data = listViewData.get(position).body_2;
+                        String[] tmpArray = data.split("/");
+                        String isbnData = tmpArray[1].toString();
 
+                        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference ref = database.getReference("/");
 
+                        DatabaseReference bookListRef = ref;
+
+                        bookListRef.child("bookList").orderByChild("isbn").equalTo(isbnData).addChildEventListener(new ChildEventListener() {
+                            @Override
+                            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                            BookDataVO popupData = snapshot.getValue(BookDataVO.class);
+
+                            bookName.setText(popupData.getBookName());
+                            quantity.setText(String.valueOf(popupData.getQuantitiy()));
+                            publishedDate.setText(popupData.getPublishedDate());
+                            publisher.setText(popupData.getPublisher());
+                            price.setText(String.valueOf(popupData.getPrice()));
+                            author.setText(popupData.getAuthor());
+                            isbn.setText(popupData.getIsbn());
+
+                            bookDialogPopup.show();
+                            Window window = bookDialogPopup.getWindow();
+                            window.setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                            }
+
+                            @Override
+                            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                            }
+
+                            @Override
+                            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                            }
+
+                            @Override
+                            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
 
                         close_btn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                dilaog01.dismiss();
+                                bookDialogPopup.dismiss();
                             }
                         });
 
@@ -122,10 +165,6 @@ public class homefragment extends Fragment {
         });
     }
 
-//    public void writeData(BookDataVO data) {
-//        mDatabase.child("bookList").child("3").setValue(data);
-//    }
-
     public ArrayList<ListData> initListData(List<BookDataVO> result) {
         listViewData.clear();
         for (BookDataVO tmp : result) {
@@ -134,8 +173,8 @@ public class homefragment extends Fragment {
             listData.mainImage = R.drawable.ic_launcher_foreground;
             listData.star = R.drawable.ic_launcher_foreground;
             listData.title = tmp.getBookName();
-            listData.body_1 =  tmp.getPublisher() + " / " + tmp.getAuthor() + " / " + tmp.getPrice() +"원";
-            listData.body_2 = tmp.getPublishedDate() + " / " + tmp.getIsbn() + " / " + tmp.getQuantitiy() +"권 남음";
+            listData.body_1 =  tmp.getPublisher() + " /" + tmp.getAuthor() + "/ " + tmp.getPrice() +"원";
+            listData.body_2 = tmp.getPublishedDate() + " /" + tmp.getIsbn() + "/ " + tmp.getQuantitiy() +"권 남음";
 
 
             listViewData.add(listData);
@@ -144,29 +183,43 @@ public class homefragment extends Fragment {
     }
 
     List<BookDataVO> searchedResult = new LinkedList<>();
+
     public void searchData (String searchText) {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference ref = database.getReference("/");
 
-        mDatabase.child("bookList").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        DatabaseReference bookListRef = ref.child("bookList");
+        searchedResult.clear();
+
+        bookListRef.orderByChild("bookName").equalTo(searchText).addChildEventListener(new ChildEventListener() {
             @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                }
-                Log.d("firebase", String.valueOf(task.getResult().getValue()));
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                searchedResult.add(snapshot.getValue(BookDataVO.class));
 
-                searchedResult.clear();
-
-                System.err.println("searchText===>" + searchText);
-
-                for (DataSnapshot ds : task.getResult().getChildren()) {
-                    BookDataVO tmp = ds.getValue(BookDataVO.class);
-                    if(tmp.getBookName().equals(searchText)) {
-                        searchedResult.add(tmp);
-                    }
-                }
                 ListAdapter aAdapter = new CustomListView(initListData(searchedResult));
                 listView.setAdapter(aAdapter);
             }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
         });
+    }
+
+    public void getPopupData (String isbn) {
+
     }
 }

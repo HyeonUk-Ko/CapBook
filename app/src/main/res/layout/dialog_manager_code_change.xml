@@ -13,12 +13,22 @@
         android:textSize="17dp"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="관리자 코드 입력" />
+        android:text="관리자 코드 변경" />
 
     <EditText
-        android:id="@+id/codeInput"
+        android:id="@+id/beforeCode"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:hint="현재 관리자 코드"
+        android:inputType="textPassword">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/afterCode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="새로운 관리자 코드"
         android:inputType="textPassword">
 
     </EditText>
@@ -28,7 +38,7 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/codeSubmit"
+            android:id="@+id/codeChangeSubmit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -40,7 +50,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/closeDialog"
+            android:id="@+id/closeDialog2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

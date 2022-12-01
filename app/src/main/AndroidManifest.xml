@@ -28,7 +28,7 @@
             android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".ui.main.fragment_manger_book_list"
+            android:name=".ui.main.fragment_manager_book_list"
             android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
@@ -50,7 +50,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.main.favoritefragment"
+            android:name=".ui.main.fragment_user_book_apply"
             android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
