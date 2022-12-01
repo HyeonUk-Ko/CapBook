@@ -82,7 +82,6 @@ public class homefragment extends Fragment {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                         dilaog01.show();
                         Window window = dilaog01.getWindow();
                         window.setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
