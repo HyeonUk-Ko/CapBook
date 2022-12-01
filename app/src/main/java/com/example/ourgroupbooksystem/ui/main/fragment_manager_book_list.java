@@ -1,4 +1,4 @@
-package com.example.ourgroupbooksystem;
+package com.example.ourgroupbooksystem.ui.main;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -21,9 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ourgroupbooksystem.ui.main.BookDataVO;
-import com.example.ourgroupbooksystem.ui.main.CustomListView;
-import com.example.ourgroupbooksystem.ui.main.ListData;
+import com.example.ourgroupbooksystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -34,12 +32,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class fragment_manger_book_list extends Fragment {
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+public class fragment_manager_book_list extends Fragment {
 
     private DatabaseReference mDatabase;
     private List<BookDataVO> result = new LinkedList<BookDataVO>();
@@ -52,15 +45,15 @@ public class fragment_manger_book_list extends Fragment {
                              Bundle savedInstanceState) {
         dilaog01 = new Dialog(getContext());       // Dialog 초기화
         dilaog01.requestWindowFeature(Window.FEATURE_NO_TITLE); // 타이틀 제거
-        dilaog01.setContentView(R.layout.dialog_book);             // xml 레이아웃 파일과 연결
+        dilaog01.setContentView(R.layout.dialog_book_for_manager);             // xml 레이아웃 파일과 연결
 
-        return inflater.inflate(R.layout.fragment_manger_book_list, container, false);
+        return inflater.inflate(R.layout.fragment_manager_book_list, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        listView = view.findViewById(R.id.list2);
+        listView= view.findViewById(R.id.list2);
         Button searchBtn = (Button) view.findViewById(R.id.searchBtn2);
         EditText searchBox = (EditText) view.findViewById(R.id.searchBox2);
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -86,7 +79,6 @@ public class fragment_manger_book_list extends Fragment {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                         dilaog01.show();
                         Window window = dilaog01.getWindow();
                         window.setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -99,6 +91,7 @@ public class fragment_manger_book_list extends Fragment {
                         TextView price = dilaog01.findViewById(R.id.price_inform);
                         TextView res = dilaog01.findViewById(R.id.res_inform);
                         TextView ser = dilaog01.findViewById(R.id.ser_num);
+
 
 
                         close_btn.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +107,7 @@ public class fragment_manger_book_list extends Fragment {
                 searchBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (searchBox.getText().toString().equals("")) {
+                        if(searchBox.getText().toString().equals("")){
                             Toast.makeText(getActivity(), "검색할 책이름을 입력해주세요", Toast.LENGTH_SHORT).show();
                         } else {
                             result.clear();
@@ -138,8 +131,8 @@ public class fragment_manger_book_list extends Fragment {
             listData.mainImage = R.drawable.ic_launcher_foreground;
             listData.star = R.drawable.ic_launcher_foreground;
             listData.title = tmp.getBookName();
-            listData.body_1 = tmp.getPublisher() + " / " + tmp.getAuthor() + " / " + tmp.getPrice() + "원";
-            listData.body_2 = tmp.getPublishedDate() + " / " + tmp.getIsbn() + " / " + tmp.getQuantitiy() + "권 남음";
+            listData.body_1 =  tmp.getPublisher() + " / " + tmp.getAuthor() + " / " + tmp.getPrice() +"원";
+            listData.body_2 = tmp.getPublishedDate() + " / " + tmp.getIsbn() + " / " + tmp.getQuantitiy() +"권 남음";
 
 
             listViewData.add(listData);
@@ -148,8 +141,7 @@ public class fragment_manger_book_list extends Fragment {
     }
 
     List<BookDataVO> searchedResult = new LinkedList<>();
-
-    public void searchData(String searchText) {
+    public void searchData (String searchText) {
 
         mDatabase.child("bookList").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -165,7 +157,7 @@ public class fragment_manger_book_list extends Fragment {
 
                 for (DataSnapshot ds : task.getResult().getChildren()) {
                     BookDataVO tmp = ds.getValue(BookDataVO.class);
-                    if (tmp.getBookName().equals(searchText)) {
+                    if(tmp.getBookName().equals(searchText)) {
                         searchedResult.add(tmp);
                     }
                 }

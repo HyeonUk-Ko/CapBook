@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="12dp"
-            android:text="학생 정보"
+            android:text="관리자 정보"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -44,32 +44,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="로그인한 이메일"
-            android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/emailInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:textSize="18sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:text="비밀번호 관련 설정"
+            android:text="관리자 코드 관련 설정"
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/pwdChange"
+            android:id="@+id/codeChange"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:text="비밀번호 변경"

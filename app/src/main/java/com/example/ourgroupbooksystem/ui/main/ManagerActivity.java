@@ -1,4 +1,4 @@
-package com.example.ourgroupbooksystem;
+package com.example.ourgroupbooksystem.ui.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -10,25 +10,25 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.ourgroupbooksystem.ui.main.favoritefragment;
-import com.example.ourgroupbooksystem.ui.main.homefragment;
-import com.example.ourgroupbooksystem.ui.main.personfragment;
+import com.example.ourgroupbooksystem.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ManagerActivity extends AppCompatActivity {
 
-    private long backKeyPressedTime = 0;
     BottomNavigationView bottomNavigationView;
     private FragmentManager fm;
     private FragmentTransaction ft;
-    private fragment_manger_book_list frag1;
-    private fragment_manager_person frag2;
+    private fragment_manager_book_list frag1;
+    private fragment_manager_book_add frag2;
+    private fragment_manager_person frag3;
 
+    private long backKeyPressedTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager);
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         bottomNavigationView = findViewById(R.id.bottom_navigation2);
@@ -39,15 +39,19 @@ public class ManagerActivity extends AppCompatActivity {
                     case R.id.nav_home2:
                         setFrag(0);
                         break;
-                    case R.id.nav_my2:
+                    case R.id.nav_addBook:
                         setFrag(1);
+                        break;
+                    case R.id.nav_my2:
+                        setFrag(2);
                         break;
                 }
                 return true;
             }
         });
-        frag1 = new fragment_manger_book_list();
-        frag2 = new fragment_manager_person();
+        frag1 = new fragment_manager_book_list();
+        frag2 = new fragment_manager_book_add();
+        frag3 = new fragment_manager_person();
         setFrag(0);
 
     }
@@ -57,11 +61,15 @@ public class ManagerActivity extends AppCompatActivity {
         ft = fm.beginTransaction();
         switch (n){
             case 0:
-                ft.replace(R.id.frameLayout,frag1);
+                ft.replace(R.id.frameLayout2,frag1);
                 ft.commit();
                 break;
             case 1:
-                ft.replace(R.id.frameLayout,frag2);
+                ft.replace(R.id.frameLayout2,frag2);
+                ft.commit();
+                break;
+            case 2:
+                ft.replace(R.id.frameLayout2,frag3);
                 ft.commit();
                 break;
         }

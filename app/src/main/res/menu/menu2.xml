@@ -6,6 +6,11 @@
         android:title="Home"
         android:enabled="true"  />
 
+    <item
+        android:id="@+id/nav_addBook"
+        android:icon="@drawable/book_icon"
+        android:title="Add"
+        android:enabled="true" />
 
     <item
         android:id="@+id/nav_my2"

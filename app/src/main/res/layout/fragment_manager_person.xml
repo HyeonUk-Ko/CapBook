@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="12dp"
-            android:text="학생 정보"
+            android:text="관리자 정보"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -49,33 +49,38 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:text="로그인한 이메일"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/emailInfo2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="비밀번호 관련 설정"
-            android:textSize="18sp" />
+            android:text="관리자 코드 관리"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/pwdChange2"
-            android:layout_width="130dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:text="비밀번호 변경"
+            android:text="관리자 코드 변경"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:textSize="17sp"
+            android:layout_marginBottom="30dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/round_button"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="도서 신청 관리"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/bookApplicationBoardBtn"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="도서 신청 목록"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:background="@drawable/round_button"/>

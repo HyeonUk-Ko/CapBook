@@ -11,12 +11,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.ourgroupbooksystem.ManagerActivity;
 import com.example.ourgroupbooksystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -178,7 +176,7 @@ public class login_main extends Activity {
         if(code.equals(managerLoginCode)){
             managerLoginDialog.dismiss();
             Toast.makeText(login_main.this, "관리자 로그인 성공", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(login_main.this, managerPage.class);
+            Intent intent = new Intent(login_main.this, ManagerActivity.class);
             startActivity(intent);
         } else {
             managerLoginDialog.dismiss();

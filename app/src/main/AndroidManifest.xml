@@ -17,19 +17,23 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31" >
         <activity
-            android:name=".ManagerActivity"
-            android:exported="false" />
+            android:name=".ui.main.ManagerActivity"
+            android:exported="true" />
         <activity
-            android:name=".fragment_manager_person"
-            android:exported="false"
+            android:name=".ui.main.fragment_manager_person"
+            android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".fragment_manger_book_list"
-            android:exported="false"
+            android:name=".ui.main.fragment_manager_book_add"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".ui.main.fragment_manger_book_list"
+            android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".ui.main.managerPage"
-            android:exported="false"
+            android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".ui.main.personfragment"
