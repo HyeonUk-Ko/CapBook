@@ -13,7 +13,7 @@
 
 
         <LinearLayout
-            android:id="@+id/loginfrom_view"
+            android:id="@+id/ceo_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -96,11 +96,12 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/add_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="등록">
 
-             </Button>
+        </Button>
 
 
 

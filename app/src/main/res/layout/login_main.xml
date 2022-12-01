@@ -12,24 +12,26 @@
         android:layout_height="match_parent"
         android:gravity="center|top"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <ImageView
             android:layout_width="169dp"
             android:layout_height="163dp"
+            android:layout_margin="50dp"
             android:src="@drawable/syuicon2"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="121dp"
-            tools:layout_editor_absoluteY="85dp"
-            android:layout_margin="50dp"/>
+            tools:layout_editor_absoluteY="85dp" />
 
         <LinearLayout
             android:id="@+id/loginfrom_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_margin="70dp"
             tools:ignore="MissingConstraints">
 
             <EditText
@@ -39,7 +41,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/custom_edittxt"
                 android:ems="10"
-                android:hint="아이디"
+                android:hint="이메일"
                 android:inputType="textEmailAddress"
                 android:textCursorDrawable="@drawable/edittxt_cursor" />
 
@@ -60,39 +62,55 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
+
                 <CheckBox
+                    android:id="@+id/autoLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:id="@+id/autoLogin"
-                    android:text="자동로그인"/>
+                    android:text="자동로그인" />
 
                 <Button
                     android:id="@+id/loginTv"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="로그인"
-                    android:layout_margin="8dp"
                     android:layout_gravity="center"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/round_button"
+                    android:text="로그인"
                     android:textColor="@color/white"
-                    android:background="@drawable/round_button"/>
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/registerTv"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="회원가입"
-                    android:layout_margin="8dp"
                     android:layout_gravity="center"
+                    android:layout_margin="8dp"
                     android:background="@drawable/round_button"
-                    android:textSize="25sp"
+                    android:text="회원가입"
                     android:textColor="@color/white"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
+
+
+                <Button
+                    android:id="@+id/managerLogin"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/round_button"
+                    android:text="관리자 로그인"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
