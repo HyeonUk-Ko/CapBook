@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.ourgroupbooksystem">
+    package="com.example.ourgroupbooksystem" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,38 +15,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OurgroupBookSystem"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31">
-        <activity android:name=".ui.main.personfragment"
+        tools:targetApi="31" >
+        <activity
+            android:name=".ManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.manager_activity_main"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.personfragment"
             android:exported="true"
-            tools:ignore="Instantiatable">
-        </activity>
-        <activity android:name=".ui.main.login_main"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".ui.main.login_main"
             android:exported="true"
-            tools:ignore="Instantiatable">
+            tools:ignore="Instantiatable" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.favoritefragment"
+        <activity
+            android:name=".ui.main.favoritefragment"
             android:exported="true"
-            tools:ignore="Instantiatable">
-        </activity>
-        <activity android:name=".ui.main.homefragment"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".ui.main.homefragment"
             android:exported="true"
-            tools:ignore="Instantiatable">
-        </activity>
-        <activity android:name=".ui.main.register_main"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".ui.main.register_main"
             android:exported="true"
-            tools:ignore="Instantiatable">
-
-        </activity>
-
-        <activity android:name=".ui.main.MainActivitys"
-            android:exported="true">
-        </activity>
-
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".ui.main.MainActivitys"
+            android:exported="true" />
     </application>
-    
 
 </manifest>

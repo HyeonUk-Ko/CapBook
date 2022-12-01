@@ -1,17 +1,22 @@
 package com.example.ourgroupbooksystem.ui.main;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.ourgroupbooksystem.ManagerActivity;
 import com.example.ourgroupbooksystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,11 +27,12 @@ import java.util.regex.Pattern;
 
 public class login_main extends Activity {
 
-    private TextView registerTv, loginTv;
+    private Button registerTv, loginTv, managerLoginBtn;
     private EditText emailText, pwdText;
     private FirebaseAuth mAuth;
     private CheckBox autoLoginCheckBox;
     Pattern emailPattern = android.util.Patterns.EMAIL_ADDRESS;
+    Dialog managerLoginDialog;
 
     private long backKeyPressedTime = 0;
 
@@ -40,6 +46,12 @@ public class login_main extends Activity {
         registerTv = findViewById(R.id.registerTv);
         loginTv = findViewById(R.id.loginTv);
         autoLoginCheckBox = findViewById(R.id.autoLogin);
+        managerLoginBtn = findViewById(R.id.managerLogin);
+
+        //dialog
+        managerLoginDialog = new Dialog(login_main.this);       // Dialog 초기화
+        managerLoginDialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // 타이틀 제거
+        managerLoginDialog.setContentView(R.layout.dialog_manager_login);
 
         mAuth = FirebaseAuth.getInstance();
         autoLogin();
@@ -76,6 +88,35 @@ public class login_main extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(login_main.this,register_main.class);
                 startActivity(intent);
+            }
+        });
+
+        managerLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Button codeSubmit = managerLoginDialog.findViewById(R.id.codeSubmit);
+                Button dialogClose = managerLoginDialog.findViewById(R.id.closeDialog);
+                EditText codeInputArea = managerLoginDialog.findViewById(R.id.codeInput);
+
+                managerLoginDialog.show();
+                Window window = managerLoginDialog.getWindow();
+                window.setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+                codeSubmit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String code = codeInputArea.getText().toString();
+                        managerLogin(code);
+                    }
+                });
+
+                dialogClose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        managerLoginDialog.dismiss();
+                    }
+                });
             }
         });
     }
@@ -128,6 +169,20 @@ public class login_main extends Activity {
             }
 
             loginUser(email,password);
+        }
+    }
+
+    public void managerLogin(String code) {
+        String managerLoginCode = getResources().getString(R.string.manger_login_code);
+        System.err.println("managerLoginCode=====>"+managerLoginCode);
+        if(code.equals(managerLoginCode)){
+            managerLoginDialog.dismiss();
+            Toast.makeText(login_main.this, "관리자 로그인 성공", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(login_main.this, ManagerActivity.class);
+            startActivity(intent);
+        } else {
+            managerLoginDialog.dismiss();
+            Toast.makeText(login_main.this, "관리자 코드 불일치", Toast.LENGTH_SHORT).show();
         }
     }
 

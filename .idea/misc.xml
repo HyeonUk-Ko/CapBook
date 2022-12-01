@@ -4,14 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/CapBook/app/src/main/res/layout/activity_main.xml" value="0.14739583333333334" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/activity_manager.xml" value="0.14427083333333332" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/activity_manager_main.xml" value="0.14427083333333332" />
         <entry key="..\:/CapBook/app/src/main/res/layout/ceo_page.xml" value="0.4166666666666667" />
         <entry key="..\:/CapBook/app/src/main/res/layout/dialog_book.xml" value="0.33" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/dialog_managerLogin.xml" value="0.4" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/dialog_manager_login.xml" value="0.1" />
         <entry key="..\:/CapBook/app/src/main/res/layout/fragment_favoritefragment.xml" value="0.14739583333333334" />
         <entry key="..\:/CapBook/app/src/main/res/layout/fragment_homefragment.xml" value="0.25" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/fragment_manager_person.xml" value="0.14427083333333332" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/fragment_manger_book_list.xml" value="0.1296875" />
         <entry key="..\:/CapBook/app/src/main/res/layout/fragment_personfragment.xml" value="0.33" />
         <entry key="..\:/CapBook/app/src/main/res/layout/item_listview.xml" value="0.409375" />
         <entry key="..\:/CapBook/app/src/main/res/layout/item_listview2.xml" value="0.409375" />
         <entry key="..\:/CapBook/app/src/main/res/layout/login_main.xml" value="0.26717557251908397" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/manager_add.xml" value="0.14427083333333332" />
         <entry key="..\:/CapBook/app/src/main/res/layout/register_main.xml" value="0.409375" />
         <entry key="..\:/OurGroupBook/app/src/main/res/layout/activity_main.xml" value="0.23177083333333334" />
         <entry key="..\:/OurGroupBook/app/src/main/res/layout/fragment_favoritefragment.xml" value="0.1328125" />
