@@ -170,8 +170,7 @@ public class homefragment extends Fragment {
         for (BookDataVO tmp : result) {
             ListData listData = new ListData();
 
-            listData.mainImage = R.drawable.ic_launcher_foreground;
-            listData.star = R.drawable.ic_launcher_foreground;
+            listData.mainImage = R.drawable.book_icon3;
             listData.title = tmp.getBookName();
             listData.body_1 =  tmp.getPublisher() + " /" + tmp.getAuthor() + "/ " + tmp.getPrice() +"원";
             listData.body_2 = tmp.getPublishedDate() + " /" + tmp.getIsbn() + "/ " + tmp.getQuantitiy() +"권 남음";

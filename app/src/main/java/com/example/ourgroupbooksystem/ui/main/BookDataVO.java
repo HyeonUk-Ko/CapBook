@@ -9,6 +9,19 @@ public class BookDataVO {
     public Integer quantitiy;
     public Integer price;
 
+    @Override
+    public String toString() {
+        return "BookDataVO{" +
+                "isbn='" + isbn + '\'' +
+                ", author='" + author + '\'' +
+                ", bookName='" + bookName + '\'' +
+                ", publishedDate='" + publishedDate + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", quantitiy=" + quantitiy +
+                ", price=" + price +
+                '}';
+    }
+
     public Integer getQuantitiy() {
         return quantitiy;
     }
