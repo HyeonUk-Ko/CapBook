@@ -42,6 +42,7 @@ public class fragment_user_book_apply extends Fragment {
         EditText publishedDate = (EditText) view.findViewById(R.id.publishedDateForBookApply);
         EditText publisher = (EditText) view.findViewById(R.id.publisherForBookApply);
         EditText isbn = (EditText) view.findViewById(R.id.isbnForBookApply);
+        EditText applyBookQuantitiy = (EditText) view.findViewById(R.id.applyBookQuantity);
         EditText price = (EditText) view.findViewById(R.id.priceForBookApply);
 
         Button applyBookBtn = (Button) view.findViewById(R.id.submitApplyBtn);
@@ -56,8 +57,9 @@ public class fragment_user_book_apply extends Fragment {
                 String isbnData = isbn.getText().toString();
 
                 // validation for int
-                if(price.getText().toString().length()>0 ) {
+                if(price.getText().toString().length()>0 || applyBookQuantitiy.getText().toString().length()>0) {
                     Integer priceData = Integer.parseInt(price.getText().toString());
+                    Integer applyBookQuantitiyData = Integer.parseInt(applyBookQuantitiy.getText().toString());
                 } else {
                     Toast.makeText(getActivity(), "빈칸 없이 입력해주세요", Toast.LENGTH_SHORT).show();
                     return;
@@ -78,6 +80,7 @@ public class fragment_user_book_apply extends Fragment {
                 tmp.setPublisher(publisher.getText().toString());
                 tmp.setIsbn(isbn.getText().toString());
                 tmp.setPrice(Integer.parseInt(price.getText().toString()));
+                tmp.setQuantitiy(Integer.parseInt(applyBookQuantitiy.getText().toString()));
 
                 applyBook(tmp);
                 bookName.setText("");
@@ -86,13 +89,12 @@ public class fragment_user_book_apply extends Fragment {
                 publisher.setText("");
                 isbn.setText("");
                 price.setText(null);
+                applyBookQuantitiy.setText(null);
             }
         });
     }
     public void applyBook(BookDataVO data) {
-        Date currentTime = Calendar.getInstance().getTime();
-        String date = currentTime.toString();
-        mDatabase.child("applyBook").child(date).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+        mDatabase.child("applyBook").child(data.getIsbn()).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 Toast.makeText(getActivity(), "도서 신청 완료", Toast.LENGTH_SHORT).show();

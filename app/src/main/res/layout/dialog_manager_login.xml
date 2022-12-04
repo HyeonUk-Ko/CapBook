@@ -19,7 +19,11 @@
         android:id="@+id/codeInput"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:inputType="textPassword">
+        android:inputType="textPassword"
+        android:background="@drawable/custom_edittxt"
+        android:ems="10"
+        android:hint="관리자 코드"
+        android:layout_marginBottom="6dp">
 
     </EditText>
 

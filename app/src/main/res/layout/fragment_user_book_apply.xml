@@ -89,6 +89,17 @@
                 android:textCursorDrawable="@drawable/edittxt_cursor" />
 
             <EditText
+                android:id="@+id/applyBookQuantity"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edittxt"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:hint="신청 권수"
+                android:imeOptions="actionDone"
+                android:textCursorDrawable="@drawable/edittxt_cursor" />
+
+            <EditText
                 android:id="@+id/isbnForBookApply"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"

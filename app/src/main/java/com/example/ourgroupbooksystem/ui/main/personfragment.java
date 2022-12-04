@@ -33,11 +33,15 @@ public class personfragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_personfragment, container, false);
 
         Button logoutBtn = v.findViewById(R.id.logout);
+        Button pwdChaneBtn = v.findViewById(R.id.pwdChange);
+        TextView loginInfo = v.findViewById(R.id.loginInfo);
 
+        String userEmail = mAuth.getCurrentUser().getEmail();
+
+        loginInfo.setText(userEmail);
 
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences("data", 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();;
-        String email = sharedPreferences.getString("email","error");
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +55,16 @@ public class personfragment extends Fragment {
             }
         });
 
+        pwdChaneBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.sendPasswordResetEmail(userEmail);
+                Toast.makeText(getActivity(), "비밀번호 변경 확인 이메일을 보냈습니다.", Toast.LENGTH_SHORT).show();
+
+                editor.clear();
+                editor.commit();
+            }
+        });
 
         return v;
     }

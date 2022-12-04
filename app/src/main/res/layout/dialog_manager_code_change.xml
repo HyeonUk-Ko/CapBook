@@ -20,7 +20,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="현재 관리자 코드"
-        android:inputType="textPassword">
+        android:inputType="textPassword"
+        android:background="@drawable/custom_edittxt"
+        android:ems="10"
+        android:layout_marginBottom="6dp">
 
     </EditText>
 
@@ -29,7 +32,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="새로운 관리자 코드"
-        android:inputType="textPassword">
+        android:inputType="textPassword"
+        android:background="@drawable/custom_edittxt"
+        android:ems="10"
+        android:layout_marginBottom="6dp">
 
     </EditText>
 

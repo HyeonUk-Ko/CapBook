@@ -14,27 +14,31 @@
         <entry key="..\:/CapBook/app/src/main/res/drawable/favorite_icon.xml" value="0.1785" />
         <entry key="..\:/CapBook/app/src/main/res/drawable/home_icon.xml" value="0.1785" />
         <entry key="..\:/CapBook/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1785" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/activity_applied_book_list.xml" value="0.1" />
         <entry key="..\:/CapBook/app/src/main/res/layout/activity_main.xml" value="0.14739583333333334" />
         <entry key="..\:/CapBook/app/src/main/res/layout/activity_manager.xml" value="0.2" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/activity_manager_applyed_book_list.xml" value="0.1" />
         <entry key="..\:/CapBook/app/src/main/res/layout/activity_manager_main.xml" value="0.14427083333333332" />
         <entry key="..\:/CapBook/app/src/main/res/layout/ceo_page.xml" value="0.4166666666666667" />
         <entry key="..\:/CapBook/app/src/main/res/layout/dialog_book.xml" value="0.4" />
         <entry key="..\:/CapBook/app/src/main/res/layout/dialog_book_for_manager.xml" value="0.29322916666666665" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/dialog_for_apply_board.xml" value="0.18802083333333333" />
         <entry key="..\:/CapBook/app/src/main/res/layout/dialog_managerLogin.xml" value="0.4" />
-        <entry key="..\:/CapBook/app/src/main/res/layout/dialog_manager_code_change.xml" value="0.264" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/dialog_manager_code_change.xml" value="0.6" />
         <entry key="..\:/CapBook/app/src/main/res/layout/dialog_manager_login.xml" value="0.4" />
         <entry key="..\:/CapBook/app/src/main/res/layout/dialog_style.xml" value="0.16621376811594202" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/fragment_bookAppliedBoard.xml" value="0.1921875" />
         <entry key="..\:/CapBook/app/src/main/res/layout/fragment_favoritefragment.xml" value="0.14739583333333334" />
-        <entry key="..\:/CapBook/app/src/main/res/layout/fragment_homefragment.xml" value="0.25" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/fragment_homefragment.xml" value="0.41522491349480967" />
         <entry key="..\:/CapBook/app/src/main/res/layout/fragment_manager_book_add.xml" value="0.264" />
-        <entry key="..\:/CapBook/app/src/main/res/layout/fragment_manager_book_list.xml" value="0.29322916666666665" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/fragment_manager_book_list.xml" value="0.1518987341772152" />
         <entry key="..\:/CapBook/app/src/main/res/layout/fragment_manager_person.xml" value="0.264" />
         <entry key="..\:/CapBook/app/src/main/res/layout/fragment_manger_book_list.xml" value="0.1296875" />
         <entry key="..\:/CapBook/app/src/main/res/layout/fragment_personfragment.xml" value="0.33" />
         <entry key="..\:/CapBook/app/src/main/res/layout/fragment_user_book_apply.xml" value="0.264" />
         <entry key="..\:/CapBook/app/src/main/res/layout/item_listview.xml" value="0.536" />
         <entry key="..\:/CapBook/app/src/main/res/layout/item_listview2.xml" value="0.409375" />
-        <entry key="..\:/CapBook/app/src/main/res/layout/login_main.xml" value="0.26717557251908397" />
+        <entry key="..\:/CapBook/app/src/main/res/layout/login_main.xml" value="0.4" />
         <entry key="..\:/CapBook/app/src/main/res/layout/manager_add.xml" value="0.14427083333333332" />
         <entry key="..\:/CapBook/app/src/main/res/layout/register_main.xml" value="0.409375" />
         <entry key="..\:/CapBook/app/src/main/res/menu/menu.xml" value="0.16979166666666667" />

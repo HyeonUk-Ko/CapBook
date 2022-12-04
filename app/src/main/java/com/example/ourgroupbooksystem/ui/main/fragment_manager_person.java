@@ -48,11 +48,11 @@ public class fragment_manager_person extends Fragment {
 
         Button logoutBtn = v.findViewById(R.id.logout2);
         Button codeChangeBtn = v.findViewById(R.id.codeChangeBtn);
+        Button applyBookBoardBtn = v.findViewById(R.id.bookApplicationBoardBtn);
 
 
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences("data", 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();;
-        String email = sharedPreferences.getString("email","error");
 
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +116,14 @@ public class fragment_manager_person extends Fragment {
                         codeChangeDialog.dismiss();
                     }
                 });
+            }
+        });
 
+        applyBookBoardBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), activity_applied_book_list.class);
+                startActivity(intent);
             }
         });
 
