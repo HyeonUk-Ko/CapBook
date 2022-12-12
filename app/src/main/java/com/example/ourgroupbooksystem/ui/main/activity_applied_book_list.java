@@ -50,6 +50,7 @@ public class activity_applied_book_list extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+
         applyBookDialog = new Dialog(activity_applied_book_list.this);       // Dialog 초기화
         applyBookDialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // 타이틀 제거
         applyBookDialog.setContentView(R.layout.dialog_for_apply_board);

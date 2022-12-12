@@ -210,4 +210,8 @@ public class login_main extends Activity {
             android.os.Process.killProcess(android.os.Process.myPid());
         }
     }
+
+    public void getToken () {
+
+    }
 }
