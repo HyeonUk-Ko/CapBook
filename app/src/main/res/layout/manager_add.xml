@@ -11,14 +11,13 @@
         android:visibility="visible">
 
 
-
         <LinearLayout
             android:id="@+id/ceo_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="70dp"
             android:gravity="center"
-            android:orientation="vertical"
-            android:layout_margin="70dp">
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/title"
@@ -35,10 +34,10 @@
                 android:id="@+id/birthday"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:background="@drawable/custom_edittxt"
                 android:ems="10"
                 android:hint="출판일"
-                android:layout_margin="10dp"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:textCursorDrawable="@drawable/edittxt_cursor" />
@@ -60,8 +59,8 @@
                 android:id="@+id/price"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_edittxt"
                 android:layout_margin="10dp"
+                android:background="@drawable/custom_edittxt"
                 android:ems="10"
                 android:hint="가격 정보"
                 android:imeOptions="actionDone"
@@ -72,8 +71,8 @@
                 android:id="@+id/put_date"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_edittxt"
                 android:layout_margin="10dp"
+                android:background="@drawable/custom_edittxt"
                 android:ems="10"
                 android:hint="등록 일자"
                 android:imeOptions="actionDone"
@@ -84,8 +83,8 @@
                 android:id="@+id/isbn_num"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_edittxt"
                 android:layout_margin="10dp"
+                android:background="@drawable/custom_edittxt"
                 android:ems="10"
                 android:hint="시리얼 번호"
                 android:imeOptions="actionDone"
@@ -102,7 +101,6 @@
             android:text="등록">
 
         </Button>
-
 
 
     </LinearLayout>
